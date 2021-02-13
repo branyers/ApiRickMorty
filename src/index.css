@@ -1,0 +1,19 @@
+body {
+  background-color: black;
+  color: white;
+  font-family: sans-serif;
+}
+.main {
+  text-align: center;
+}
+.buton {
+  background-color: blue;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+}
+.father {
+  display: flex;
+  border: solid white;
+  padding: 10px;
+}
