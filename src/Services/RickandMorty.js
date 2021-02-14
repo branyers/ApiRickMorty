@@ -1,8 +1,8 @@
 import axios from "axios"
 
- const getLocations = () => {
-    const URL = `https://rickandmortyapi.com/api/location`;
-    const res = axios(URL);
+ const getLocations = async(id) => {
+    const URL = `https://rickandmortyapi.com/api/location/${id}`;
+    const res = await axios(URL);
     return res;
   };
   

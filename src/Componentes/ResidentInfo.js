@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ResidentInfo = () => {
+const ResidentInfo = ({residents}) => {
       return (
             <div className="card col-md-6">
                   <div className="card-body col-md-6">

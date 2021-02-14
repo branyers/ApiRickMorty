@@ -1,5 +1,5 @@
 body {
-  background-color: black;
+  /* background-color: black; */
   color: white;
   font-family: sans-serif;
 }
@@ -16,4 +16,8 @@ body {
   display: flex;
   border: solid white;
   padding: 10px;
+}
+
+.color {
+  color: black;
 }

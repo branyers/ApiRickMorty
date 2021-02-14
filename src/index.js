@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import SearchBox from './Componentes/SearchBox';
+import { App } from './App';
+
 import './index.css';
 
 ReactDOM.render(
-    <SearchBox />,
+    <App/>,
   document.getElementById('root')
 );

@@ -1,23 +1,15 @@
-import React,{useState, useEffect} from 'react'
-import getLocations from "../Services/RickandMorty"
-
-export const LocationInfo = () => {
-const [Locations, setLocations] = useState([])
-
-useEffect( async() =>{
-
-    getLocations().then(result =>{
-        setLocations(result.data.results)
-    })
+import React from 'react'
 
 
-},[])
-
-console.log(Locations)
+export const LocationInfo = ({name,type,dimension,residents}) => {
 
     return (
         <div>
-            
+            <p className="color">{name}</p>
+            <p className="color">{type}</p>
+            <p className="color">{dimension}</p>
+            <p className="color">{residents.length}</p>
         </div>
     )
 }
+
