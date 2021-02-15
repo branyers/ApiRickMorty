@@ -8,7 +8,7 @@ export const LocationContainer = () => {
     const [type, setType] = useState()
     const [dimension, setDimension] = useState()
     const [IsarrayEmpty, setIsarrayEmpty] = useState()
-    const [Id, setID] = useState(3)
+    const [Id, setID] = useState(5)
 
 
 
@@ -47,18 +47,17 @@ export const LocationContainer = () => {
 
 
 
-    useEffect(async () => {
+    useEffect( () => {
 
-        await getLocations(Id).then((data) => {
+          getLocations(Id).then((data) => {
             PoblateState(data.data)
-
         })
 
+        return () => {
+            <Auxcomponent />
+        }
 
     }, [Id])
-
-
-
 
 
 

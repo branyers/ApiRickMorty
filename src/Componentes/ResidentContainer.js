@@ -4,40 +4,41 @@ import ResidentInfo from './ResidentInfo'
 
  const ResidentContainer = ({ Residents }) => {
 
- const [magigComponent, setMagigComponent] = useState()
+ const [magigComponent, setMagigComponent] = useState([])
+    let iSMounted = true
     const resultResidents = (data) =>{
         const Allresidents = data.map((residents) =>{
-            return <ResidentInfo residents={residents}/>
+            return <ResidentInfo key={residents.id} residents={residents}/>
         })
         setMagigComponent(Allresidents)
     }
 
 
 
-    useEffect(async () => {
-
+    useEffect( () => {
+        let SaverResidents = []
         Residents.map((link) => {
-            let SaverResidents = []
             SaverResidents.push(
 
                 axios(link).then((result) => {
                 console.log(result.data)
+                if (iSMounted){return result.data}
+                
             })
             
             )
-               
+        }
+        
+        
+        
+        )
+        Promise.all(SaverResidents).then((rest) =>{
+            resultResidents(rest)
+        })
 
-                Promise.all(SaverResidents).then((rest) =>{
-                    resultResidents(rest)
-                })
-        },[Residents])
 
 
-
-
-
-    })
-
+    },[Residents])
 
 
 

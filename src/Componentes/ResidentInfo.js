@@ -1,16 +1,17 @@
 import React from 'react'
 
 const ResidentInfo = ({residents}) => {
+
       return (
             <div className="card col-md-6">
                   <div className="card-body col-md-6">
                         <div className="father col-md-6">
                         <div className="col-md-6">
-                              aqui va la imagen 
+                         <img src={residents.image}/>
                         </div>
                         <div className="col-md-6">
-                              <span>Gonorrhea</span>
-                              <h4> dead-human</h4>
+                              <span>{residents.name}</span>
+                              <h4> {residents.status}</h4>
                               <span>Last known location</span>
                               <span>Anatomy park </span>
                               <span>first seen </span>
